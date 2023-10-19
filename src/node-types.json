@@ -376,11 +376,11 @@
           "named": true
         },
         {
-          "type": "foreach",
+          "type": "expression",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "foreach",
           "named": true
         },
         {
@@ -388,7 +388,7 @@
           "named": true
         },
         {
-          "type": "statement_list",
+          "type": "statement",
           "named": true
         }
       ]

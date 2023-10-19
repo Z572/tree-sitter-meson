@@ -2,17 +2,25 @@
 Simple strings
 ================================================================================
 x = 'abc'
+x = '#'
 
 --------------------------------------------------------------------------------
 
 (build_definition
-  (statement
-    (assignment_statement
-      (expression
-        (identifier))
-      (assignment_operator)
-      (expression
-        (string_literal)))))
+ (statement
+  (assignment_statement
+   (expression
+    (identifier))
+   (assignment_operator)
+   (expression
+    (string_literal))))
+ (statement
+  (assignment_statement
+   (expression
+    (identifier))
+   (assignment_operator)
+   (expression
+    (string_literal)))))
 
 ================================================================================
 Various escape sequences
@@ -61,38 +69,38 @@ x = '\19'
 --------------------------------------------------------------------------------
 
 (build_definition
-  (statement
-    (assignment_statement
-      (expression
-        (identifier))
-      (assignment_operator)
-      (expression
-        (string_literal
-          (escape_sequence)))))
-  (statement
-    (assignment_statement
-      (expression
-        (identifier))
-      (assignment_operator)
-      (expression
-        (string_literal
-          (escape_sequence)))))
-  (statement
-    (assignment_statement
-      (expression
-        (identifier))
-      (assignment_operator)
-      (expression
-        (string_literal
-          (escape_sequence)))))
-  (statement
-    (assignment_statement
-      (expression
-        (identifier))
-      (assignment_operator)
-      (expression
-        (string_literal
-          (escape_sequence))))))
+ (statement
+  (assignment_statement
+   (expression
+    (identifier))
+   (assignment_operator)
+   (expression
+    (string_literal
+     (escape_sequence)))))
+ (statement
+  (assignment_statement
+   (expression
+    (identifier))
+   (assignment_operator)
+   (expression
+    (string_literal
+     (escape_sequence)))))
+ (statement
+  (assignment_statement
+   (expression
+    (identifier))
+   (assignment_operator)
+   (expression
+    (string_literal
+     (escape_sequence)))))
+ (statement
+  (assignment_statement
+   (expression
+    (identifier))
+   (assignment_operator)
+   (expression
+    (string_literal
+     (escape_sequence))))))
 
 ================================================================================
 Multiline strings
@@ -100,15 +108,16 @@ Multiline strings
 
 x = '''This string
 spans
-several lines'''
+several lines
+#h'''
 
 --------------------------------------------------------------------------------
 
 (build_definition
-  (statement
-    (assignment_statement
-      (expression
-        (identifier))
-      (assignment_operator)
-      (expression
-        (string_literal)))))
+ (statement
+  (assignment_statement
+   (expression
+    (identifier))
+   (assignment_operator)
+   (expression
+    (string_literal)))))

@@ -22,7 +22,7 @@ module.exports = grammar({
     build_definition: ($) => repeat(choice("\n", $.statement)),
 
     // comments
-    comment: (_$) => seq("#", /[^\n]*/, "\n"),
+    comment: (_$) => seq("#",/.*/),
 
     // keywords
     if: (_$) => token("if"),
@@ -56,10 +56,10 @@ module.exports = grammar({
       choice(
         seq(
           "'",
-          repeat(choice($.escape_sequence, /[^'\\]/, $.bad_escape)),
+          repeat(choice("#",$.escape_sequence, /[^'\\]/, $.bad_escape)),
           "'"
         ),
-        seq("'''", repeat(/./), "'''")
+        seq("'''", repeat((choice("#",/./))), "'''"),
       ),
 
     // formatted strings - we don't match out the parameters
@@ -101,7 +101,7 @@ module.exports = grammar({
 
     array_literal: ($) => seq("[", optional($._expression_list), "]"),
 
-    _expression_list: ($) => seq($.expression, repeat(seq(",", $.expression))),
+    _expression_list: ($) => seq($.expression, repeat(seq(",", $.expression)) ,optional(",")),
 
     dictionary_literal: ($) => seq("{", optional($._key_value_list), "}"),
 
@@ -109,7 +109,7 @@ module.exports = grammar({
       seq(field("key", $.expression), ":", field("value", $.expression)),
 
     _key_value_list: ($) =>
-      seq($.key_value_item, repeat(seq(",", $.key_value_item))),
+      seq($.key_value_item, repeat(seq(",", $.key_value_item)),optional(",")),
 
     _literal: ($) =>
       choice(
@@ -235,7 +235,7 @@ module.exports = grammar({
     argument: ($) => $.expression,
 
     _keyword_arguments: ($) =>
-      seq($.keyword_argument, repeat(seq(",", $.keyword_argument))),
+      seq($.keyword_argument, repeat(seq(",", $.keyword_argument)),optional(",")),
 
     keyword_argument: ($) =>
       seq(field("keyword", $.identifier), ":", $.expression),
@@ -268,9 +268,9 @@ module.exports = grammar({
         $.foreach,
         $.identifier_list,
         ":",
-        $.identifier,
+        $.expression,
         "\n",
-        optional($.statement_list),
+        optional(repeat($.statement)),
         $.endforeach
       ),
 

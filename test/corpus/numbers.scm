@@ -40,39 +40,60 @@ var2 = 0xF123
 --------------------------------------------------------------------------------
 
 (build_definition
-  (statement
-    (assignment_statement
-      (expression
-        (identifier))
-      (assignment_operator)
-      (expression
-        (int_literal)))))
+ (statement
+  (assignment_statement
+   (expression
+    (identifier))
+   (assignment_operator)
+   (expression
+    (int_literal)))))
 
 ================================================================================
 Octal literals
 ================================================================================
 var2 = 0o12347
 
-===
+---
+
+(build_definition
+ (statement
+  (assignment_statement
+   (expression
+    (identifier))
+   (assignment_operator)
+   (expression
+    (int_literal)))))
+================================================================================
 Binary literals
-===
+================================================================================
 var = 0b0
 var = 0b1
 var = 0b1111011101010101
 
 ---
-(build_definition)
-
---------------------------------------------------------------------------------
 
 (build_definition
-  (statement
-    (assignment_statement
-      (expression
-        (identifier))
-      (assignment_operator)
-      (expression
-        (int_literal)))))
+ (statement
+  (assignment_statement
+   (expression
+    (identifier))
+   (assignment_operator)
+   (expression
+    (int_literal))))
+ (statement
+  (assignment_statement
+   (expression
+    (identifier))
+   (assignment_operator)
+   (expression
+    (int_literal))))
+ (statement
+  (assignment_statement
+   (expression
+    (identifier))
+   (assignment_operator)
+   (expression
+    (int_literal)))))
 
 ================================================================================
 Simple binary expressions
