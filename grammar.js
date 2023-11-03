@@ -53,26 +53,18 @@ module.exports = grammar({
       ),
 
     string_literal: ($) =>
-      choice(
-        seq(
+      seq(
           "'",
           repeat(choice("#",$.escape_sequence, /[^'\\]/, $.bad_escape)),
           "'"
         ),
-        seq("'''", repeat((choice("#",/./))), "'''"),
-      ),
+      multiline_string_literal: ($) =>
+      seq("'''", repeat((choice("#",/./))), "'''"),
 
     // formatted strings - we don't match out the parameters
     // TODO: add support for calling out format parameters
-    fstring_literal: ($) =>
-      choice(
-        seq(
-          "f'",
-          repeat(choice($.escape_sequence, /[^'\\]/, $.bad_escape)),
-          "'"
-        ),
-        seq("f'''", repeat(/./), "'''")
-      ),
+      fstring_literal: ($) => seq("f",$.string_literal),
+      multiline_fstring_literal: ($) => seq("f",$.multiline_string_literal),
 
     // known supported escape sequences
     escape_sequence: (_$) =>
@@ -115,7 +107,9 @@ module.exports = grammar({
       choice(
         $.boolean_literal,
         $.int_literal,
+          $.multiline_string_literal,
         $.string_literal,
+          $.multiline_fstring_literal,
         $.fstring_literal,
         $.array_literal,
         $.dictionary_literal

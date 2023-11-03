@@ -120,4 +120,4 @@ several lines
     (identifier))
    (assignment_operator)
    (expression
-    (string_literal)))))
+    (multiline_string_literal)))))

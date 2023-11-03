@@ -258,6 +258,14 @@
           "named": true
         },
         {
+          "type": "multiline_fstring_literal",
+          "named": true
+        },
+        {
+          "type": "multiline_string_literal",
+          "named": true
+        },
+        {
           "type": "multiplicative_expression",
           "named": true
         },
@@ -304,15 +312,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
-      "required": false,
+      "multiple": false,
+      "required": true,
       "types": [
         {
-          "type": "bad_escape",
-          "named": true
-        },
-        {
-          "type": "escape_sequence",
+          "type": "string_literal",
           "named": true
         }
       ]
@@ -502,6 +506,26 @@
         }
       ]
     }
+  },
+  {
+    "type": "multiline_fstring_literal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "multiline_string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "multiline_string_literal",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "multiplicative_expression",
@@ -918,11 +942,7 @@
     "named": true
   },
   {
-    "type": "f'",
-    "named": false
-  },
-  {
-    "type": "f'''",
+    "type": "f",
     "named": false
   },
   {
