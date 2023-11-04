@@ -25,8 +25,7 @@ endforeach
         (string_literal))))))
    (statement
     (assignment_statement
-     (expression
-      (identifier))
+     (identifier)
      (assignment_operator)
      (expression
       (identifier))))
@@ -52,8 +51,7 @@ endforeach
     (array_literal))
    (statement
     (assignment_statement
-     (expression
-      (identifier))
+     (identifier)
      (assignment_operator)
      (expression
       (identifier))))
@@ -78,8 +76,7 @@ endforeach
 (build_definition
  (statement
   (assignment_statement
-   (expression
-    (identifier))
+   (identifier)
    (assignment_operator)
    (expression
     (array_literal
@@ -112,8 +109,7 @@ endforeach
     (identifier))
    (statement
     (assignment_statement
-     (expression
-      (identifier))
+     (identifier)
      (assignment_operator)
      (expression
       (function_expression
@@ -204,8 +200,7 @@ endforeach
      (statement_list
       (statement
        (assignment_statement
-        (expression
-         (identifier))
+        (identifier)
         (assignment_operator)
         (expression
          (identifier)))))
@@ -232,8 +227,7 @@ endforeach
 (build_definition
  (statement
   (assignment_statement
-   (expression
-    (identifier))
+   (identifier)
    (assignment_operator)
    (expression
     (array_literal
@@ -249,8 +243,7 @@ endforeach
       (string_literal))))))
  (statement
   (assignment_statement
-   (expression
-    (identifier))
+   (identifier)
    (assignment_operator)
    (expression
     (array_literal))))
@@ -289,8 +282,7 @@ endforeach
      (endif)))
    (statement
     (assignment_statement
-     (expression
-      (identifier))
+     (identifier)
      (assignment_operator)
      (expression
       (identifier))))

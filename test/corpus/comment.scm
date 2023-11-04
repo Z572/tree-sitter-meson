@@ -10,16 +10,14 @@ c='a'
 (build_definition
  (statement
   (assignment_statement
-   (expression
-    (identifier))
+   (identifier)
    (assignment_operator)
    (expression
     (string_literal)))
   (comment))
  (statement
   (assignment_statement
-   (expression
-    (identifier))
+   (identifier)
    (assignment_operator)
    (expression
     (string_literal)))))

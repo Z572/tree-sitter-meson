@@ -154,8 +154,9 @@ module.exports = grammar({
         $.identifier
       ),
 
+// Assignment target must be an id.
     assignment_statement: ($) =>
-      seq($.expression, $.assignment_operator, $.expression),
+      seq($.identifier, $.assignment_operator, $.expression),
 
     assignment_operator: (_$) => choice("=", "*=", "/=", "%=", "+=", "-="),
 

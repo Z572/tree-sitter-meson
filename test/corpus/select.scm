@@ -21,15 +21,13 @@ endif
 (build_definition
  (statement
   (assignment_statement
-   (expression
-    (identifier))
+   (identifier)
    (assignment_operator)
    (expression
     (int_literal))))
  (statement
   (assignment_statement
-   (expression
-    (identifier))
+   (identifier)
    (assignment_operator)
    (expression
     (int_literal))))
@@ -76,8 +74,7 @@ endif
    (endif)))
  (statement
   (assignment_statement
-   (expression
-    (identifier))
+   (identifier)
    (assignment_operator)
    (expression
     (function_expression

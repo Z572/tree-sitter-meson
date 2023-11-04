@@ -12,49 +12,45 @@ expr = [ 1 + 2 ]
 --------------------------------------------------------------------------------
 
 (build_definition
-  (statement
-    (assignment_statement
-      (expression
-        (identifier))
-      (assignment_operator)
-      (expression
-        (array_literal
-          (expression
-            (int_literal))
-          (expression
-            (int_literal))
-          (expression
-            (int_literal))))))
-  (statement
-    (assignment_statement
-      (expression
-        (identifier))
-      (assignment_operator)
-      (expression
-        (array_literal))))
-  (statement
-    (assignment_statement
-      (expression
-        (identifier))
-      (assignment_operator)
-      (expression
-        (array_literal
-          (expression
-            (string_literal))))))
-  (statement
-    (assignment_statement
-      (expression
-        (identifier))
-      (assignment_operator)
-      (expression
-        (array_literal
-          (expression
-            (additive_expression
-              (expression
-                (int_literal))
-              (additive_operator)
-              (expression
-                (int_literal)))))))))
+ (statement
+  (assignment_statement
+   (identifier)
+   (assignment_operator)
+   (expression
+    (array_literal
+     (expression
+      (int_literal))
+     (expression
+      (int_literal))
+     (expression
+      (int_literal))))))
+ (statement
+  (assignment_statement
+   (identifier)
+   (assignment_operator)
+   (expression
+    (array_literal))))
+ (statement
+  (assignment_statement
+   (identifier)
+   (assignment_operator)
+   (expression
+    (array_literal
+     (expression
+      (string_literal))))))
+ (statement
+  (assignment_statement
+   (identifier)
+   (assignment_operator)
+   (expression
+    (array_literal
+     (expression
+      (additive_expression
+       (expression
+        (int_literal))
+       (additive_operator)
+       (expression
+        (int_literal)))))))))
 
 ================================================================================
 Nested Arrays
@@ -65,33 +61,32 @@ progs = [['prog1', ['prog1.c', 'foo.c']],
 --------------------------------------------------------------------------------
 
 (build_definition
-  (statement
-    (assignment_statement
-      (expression
-        (identifier))
-      (assignment_operator)
-      (expression
+ (statement
+  (assignment_statement
+   (identifier)
+   (assignment_operator)
+   (expression
+    (array_literal
+     (expression
+      (array_literal
+       (expression
+        (string_literal))
+       (expression
         (array_literal
-          (expression
-            (array_literal
-              (expression
-                (string_literal))
-              (expression
-                (array_literal
-                  (expression
-                    (string_literal))
-                  (expression
-                    (string_literal))))))
-          (expression
-            (array_literal
-              (expression
-                (string_literal))
-              (expression
-                (array_literal
-                  (expression
-                    (string_literal))
-                  (expression
-                    (string_literal)))))))))))
+         (expression
+          (string_literal))
+         (expression
+          (string_literal))))))
+     (expression
+      (array_literal
+       (expression
+        (string_literal))
+       (expression
+        (array_literal
+         (expression
+          (string_literal))
+         (expression
+          (string_literal)))))))))))
 
 ================================================================================
 Dictionaries
@@ -106,39 +101,36 @@ multi = { 'foo' : bar, 'bar': foo }
 --------------------------------------------------------------------------------
 
 (build_definition
-  (statement
-    (assignment_statement
+ (statement
+  (assignment_statement
+   (identifier)
+   (assignment_operator)
+   (expression
+    (dictionary_literal
+     (key_value_item
       (expression
-        (identifier))
-      (assignment_operator)
+       (string_literal))
       (expression
-        (dictionary_literal
-          (key_value_item
-            (expression
-              (string_literal))
-            (expression
-              (identifier)))))))
-  (statement
-    (assignment_statement
+       (identifier)))))))
+ (statement
+  (assignment_statement
+   (identifier)
+   (assignment_operator)
+   (expression
+    (dictionary_literal))))
+ (statement
+  (assignment_statement
+   (identifier)
+   (assignment_operator)
+   (expression
+    (dictionary_literal
+     (key_value_item
       (expression
-        (identifier))
-      (assignment_operator)
+       (string_literal))
       (expression
-        (dictionary_literal))))
-  (statement
-    (assignment_statement
+       (identifier)))
+     (key_value_item
       (expression
-        (identifier))
-      (assignment_operator)
+       (string_literal))
       (expression
-        (dictionary_literal
-          (key_value_item
-            (expression
-              (string_literal))
-            (expression
-              (identifier)))
-          (key_value_item
-            (expression
-              (string_literal))
-            (expression
-              (identifier))))))))
+       (identifier))))))))
