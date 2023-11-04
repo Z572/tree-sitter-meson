@@ -121,3 +121,41 @@ several lines
    (assignment_operator)
    (expression
     (multiline_string_literal)))))
+
+================================================================================
+fstring
+================================================================================
+
+n = 10
+s = f'int: @n@'
+cc= f'''
+@n@: @s@
+'''
+
+--------------------------------------------------------------------------------
+
+(build_definition
+ (statement
+  (assignment_statement
+   (expression
+    (identifier))
+   (assignment_operator)
+   (expression
+    (int_literal))))
+ (statement
+  (assignment_statement
+   (expression
+    (identifier))
+   (assignment_operator)
+   (expression
+    (fstring_literal
+     (format_parameter (identifier))))))
+ (statement
+  (assignment_statement
+   (expression
+    (identifier))
+   (assignment_operator)
+   (expression
+    (multiline_fstring_literal
+     (format_parameter (identifier))
+     (format_parameter (identifier)))))))

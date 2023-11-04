@@ -308,7 +308,7 @@
     }
   },
   {
-    "type": "fstring_literal",
+    "type": "format_parameter",
     "named": true,
     "fields": {},
     "children": {
@@ -316,7 +316,30 @@
       "required": true,
       "types": [
         {
-          "type": "string_literal",
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fstring_literal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bad_escape",
+          "named": true
+        },
+        {
+          "type": "escape_sequence",
+          "named": true
+        },
+        {
+          "type": "format_parameter",
           "named": true
         }
       ]
@@ -512,11 +535,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": true,
+      "multiple": true,
+      "required": false,
       "types": [
         {
-          "type": "multiline_string_literal",
+          "type": "format_parameter",
           "named": true
         }
       ]
@@ -863,6 +886,10 @@
   },
   {
     "type": "?",
+    "named": false
+  },
+  {
+    "type": "@",
     "named": false
   },
   {

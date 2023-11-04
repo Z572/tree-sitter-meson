@@ -61,10 +61,14 @@ module.exports = grammar({
       multiline_string_literal: ($) =>
       seq("'''", repeat((choice("#",/./))), "'''"),
 
-    // formatted strings - we don't match out the parameters
-    // TODO: add support for calling out format parameters
-      fstring_literal: ($) => seq("f",$.string_literal),
-      multiline_fstring_literal: ($) => seq("f",$.multiline_string_literal),
+    // formatted strings
+      format_parameter: ($) => seq("@" , $.identifier, "@"),
+      fstring_literal: ($) => seq("f",seq(
+          "'",
+          repeat(choice($.format_parameter,"#",$.escape_sequence, /[^'\\]/, $.bad_escape)),
+          "'"
+        )),
+      multiline_fstring_literal: ($) => seq("f",seq("'''", repeat((choice($.format_parameter,"#",/./))), "'''")),
 
     // known supported escape sequences
     escape_sequence: (_$) =>
