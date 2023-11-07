@@ -22,7 +22,7 @@ module.exports = grammar({
     build_definition: ($) => repeat(choice("\n", $.statement)),
 
     // comments
-    comment: (_$) => seq("#",/.*/),
+    comment: (_$) => seq("#",choice("#",/.*/)),
 
     // keywords
     if: (_$) => token("if"),

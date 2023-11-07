@@ -26,8 +26,17 @@
           "value": "#"
         },
         {
-          "type": "PATTERN",
-          "value": ".*"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "#"
+            },
+            {
+              "type": "PATTERN",
+              "value": ".*"
+            }
+          ]
         }
       ]
     },
